@@ -1,2 +1,2 @@
 # ClassC
-A subset of C for microprocessors
+A compiler for the classy language.
