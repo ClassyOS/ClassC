@@ -10,18 +10,18 @@ there are four types of segments:
 
 1. The Main Segment
 
- There can be only one main segment per linked program, and it is used as the program's entery point.
+  There can be only one main segment per linked program, and it is used as the program's entery point.
 
 2. Define Segment
 
- A define segment is a segment just containing [type defenitions](#Type-Defenition). It is only used by the compiler and does not appear in the output binary.
+  A define segment is a segment just containing [type defenitions](#Type-Defenition). It is only used by the compiler and does not appear in the output binary.
 
 3. Code Segment
 
- A Code segment contains functions and variables. The variables are local to the segment, but the functions can be called by other segemnts.
- 
+  A Code segment contains functions and variables. The variables are local to the segment, but the functions can be called by other segemnts.
+
 4. Data Segment
- A data segment can contain only variables, but unlike code segments, you can refer to the variables in other segments.
+  A data segment can contain only variables, but unlike code segments, you can refer to the variables in other segments.
 
 ### Using Multiple Segments
 
