@@ -25,7 +25,7 @@ there are four types of segments:
 
 ### Using Multiple Segments
 
-In order to use a variable or function from another segement, you write the name of the segement and the segment and the name of the function/variable, seperated by the scope oporator(::). For example:
+In order to use a variable, function ot type from another segement, you write the name of the segement and the segment and the name of the function/variable/type, seperated by the scope oporator(::). For example:
 
 ``` c
 data foo {
@@ -40,10 +40,10 @@ main requires foo {
 
 ### Defining a Segment
 
-to define a segment, simply write the segment type (main, define, code, data) and put and identefier if needed (on code and data segments). For example:
+to define a segment, simply write the segment type (main, define, code, data) and put and identefier if needed (on code, data, and define segments). For example:
 
 ```c
-define {
+define types {
     // Type defenitions go here
 }
 
@@ -62,7 +62,7 @@ main {
 
 ### Linking Segments Togehther
 
-If you want to use a function/variable from another segment, you need to tell the linker that segment requires getting the address of the other segment. To do that, after the function defenition put the "requires" keyword and the names of the required segments. For example:
+If you want to use a function/variable (__but not type__) from another segment, you need to tell the linker that segment requires getting the address of the other segment. To do that, after the function defenition put the "requires" keyword and the names of the required segments. For example:
 
 ```c
 data foo {
@@ -75,3 +75,35 @@ main requires foo {
 ```
 
 ## Type defenition
+
+Type defenitions must be contained within a define segment. Defining a type uses the following syntax:
+
+```c
+define types {
+    type foo {
+        int x;
+        byte y;
+    }
+}
+```
+
+you can use any defined type in the subtypes between the brackets, including other defined types:
+
+```c
+define types {
+    type foo {
+        int x;
+        byte y;
+    }
+
+    type bar {
+        foo x;
+    }
+}
+```
+
+If you use a type from a define segment in another file, you can define it in one file and use the include directive:
+
+```c
+#include "path/to/file/with/define/segment"
+```
