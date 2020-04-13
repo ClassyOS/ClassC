@@ -107,4 +107,27 @@ If you use a type from a define segment in another file, you can define it in on
 ```c
 #include "path/to/file/with/define/segment"
 ```
-(add specs here)
+###Standard Library
+
+##Output
+
+Output is done through the print function. The print function works by outputting a string that it's been given. Markers in the string signify where to input certain variables. These markers are a single letter surrounded by { }. The variable is then given after the string. See the two examples below.
+
+```c
+print("Hello World");
+print("{i}", 10);
+```
+
+##Input
+
+There are two input functions, read() and scan(). scan() takes input and converts it into a specified type. The below output converts the given input into an int type.
+
+```c
+foo = scan(int);
+```
+
+read() is the input for a character or string. It works by reading the input until a specified character or character by character without any arguments. The first example below reads a line, the second a character.
+```c
+foo = read('\n');
+bar = read();
+```
