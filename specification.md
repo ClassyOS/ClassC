@@ -107,3 +107,4 @@ If you use a type from a define segment in another file, you can define it in on
 ```c
 #include "path/to/file/with/define/segment"
 ```
+(add specs here)
